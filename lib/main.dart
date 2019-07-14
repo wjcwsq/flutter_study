@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_study/tooltip.dart';
+import 'package:flutter_study/tooltip/tooltip.dart';
 
 void main() => runApp(MyApp());
 
@@ -132,6 +132,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Colors.red,
               ),
             ),
+            Divider(),
+            // Tooltip 测试
             Tooltip(
               message: 'tooltip test',
               child: RaisedButton(

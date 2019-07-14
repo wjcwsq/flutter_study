@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class TooltipTest extends StatelessWidget{
 
@@ -14,8 +15,9 @@ class TooltipTest extends StatelessWidget{
         // 这个Center默认是内部控件居中显示，
         // 但若内部是个Column，则内容是靠上显示的
         //   需要在Column中指定居中显示
-        //   似乎是自动铺满整个屏幕
+        //   似乎column是自动铺满整个Center控件
         body: Center(
+          // 如果只是一个Text，则其会居中显示
 //          child: Text('center'),
           child:  Column(
             // 加上这个，才会居中显示，不然只是靠上显示
@@ -37,6 +39,18 @@ class TooltipTest extends StatelessWidget{
                 child: Icon(
                   Icons.delete,
                   color: Colors.blue,
+                ),
+              ),
+              Divider(),
+              // toast 显示内容
+              Tooltip(
+                message: 'toast',
+                child: RaisedButton(
+                  child: Text('toast show'),
+                  onPressed: (){
+                    Fluttertoast.showToast(msg: 'this is a toast');
+
+                  },
                 ),
               ),
 
