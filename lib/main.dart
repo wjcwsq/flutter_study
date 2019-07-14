@@ -98,6 +98,30 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.display1,
             ),
+            Container( // 用Container来包一个ToolTip
+              child: Tooltip(
+                message: 'container tooltip raisedbutton',
+                child: RaisedButton(
+                  child: Text('container - tooltip - raisedbutton'),
+                  onPressed: ()=> print('container - tooltip - raisedbutton - pressed'),
+                ),
+              ),
+            ),
+            // 直接用一个ToolTip
+            Tooltip(
+              message: "only a tooltip ",
+              child: RaisedButton(
+                child: Text('tooltip raisedbutton'),
+                onPressed: ()=>print('tooltip raisedbutton pressed'),
+              ),
+            ),
+            // RaisedButton内部是没办法用ToolTip的
+            RaisedButton(
+              textColor: Colors.blue,
+              child: Text('button with no tooltip', ),
+              onPressed: ()=> print('press raisedbutton!'),
+
+            ),
           ],
         ),
       ),
