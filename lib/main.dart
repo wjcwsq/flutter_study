@@ -122,6 +122,15 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: ()=> print('press raisedbutton!'),
 
             ),
+            // 图标的ToolTip，且显示在控件上方
+            Tooltip(
+              message: '点击删除此项内容',
+              preferBelow: false,
+              child: Icon(
+                Icons.delete,
+                color: Colors.red,
+              ),
+            ),
           ],
         ),
       ),
