@@ -126,15 +126,6 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: ()=> print('press raisedbutton!'),
 
             ),
-            // 图标的ToolTip，且显示在控件上方
-            Tooltip(
-              message: '点击删除此项内容',
-              preferBelow: false,
-              child: Icon(
-                Icons.delete,
-                color: Colors.red,
-              ),
-            ),
             Divider(),
             // Tooltip 测试
             Tooltip(
@@ -165,6 +156,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(context, MaterialPageRoute(
                   builder: (context) => KeepAliveApp(),
                 ));
+              },
+            ),
+            Divider(),
+            RaisedButton(
+              child: Text('搜索条'),
+              onPressed: (){
+                Fluttertoast.showToast(msg: '这是搜索条');
               },
             ),
             Divider(),
