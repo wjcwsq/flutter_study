@@ -3,6 +3,7 @@ import 'package:flutter_study/keep_state/keep_alive.dart';
 import 'package:flutter_study/tooltip/tooltip.dart';
 import 'package:flutter_study/bottom_navi/bottom_navigation.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'search_bar/search_bar_demo.dart';
 
 void main() => runApp(MyApp());
 
@@ -163,6 +164,9 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('搜索条'),
               onPressed: (){
                 Fluttertoast.showToast(msg: '这是搜索条');
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) => SearchBarDemo(),
+                ));
               },
             ),
             Divider(),
