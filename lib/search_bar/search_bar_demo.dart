@@ -51,6 +51,7 @@ class SearchBarDelegate extends SearchDelegate<String>{
     ];
   }
 
+  //
   // 左侧的返回按钮，动画，关闭窗口
   @override
   Widget buildLeading(BuildContext context){
@@ -69,6 +70,7 @@ class SearchBarDelegate extends SearchDelegate<String>{
   }
 
   // 搜到内容后，显示在页面中
+  // ctrl +   厅厅厅厅厅how are youds对方的的xxxx
   @override
   Widget buildResults(BuildContext context){
     return Container(

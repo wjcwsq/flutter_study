@@ -4,6 +4,8 @@ import 'package:flutter_study/tooltip/tooltip.dart';
 import 'package:flutter_study/bottom_navi/bottom_navigation.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'search_bar/search_bar_demo.dart';
+import 'progress_bar/progress_bar_demo.dart';
+import 'dialog_demo/dialog_demo.dart';
 
 void main() => runApp(MyApp());
 
@@ -170,6 +172,26 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             Divider(),
+            RaisedButton(
+              child: Text('progress bar demo'),
+              onPressed:(){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context)=> ProgressBarDemo()),
+                );
+              },
+            ),
+            Divider(),
+            RaisedButton(
+              child: Text('dialog demo'),
+              onPressed: (){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DialogDemo(),));
+              },
+            ),
+            Divider(),
+
           ],
         ),
       ),

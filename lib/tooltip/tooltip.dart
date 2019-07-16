@@ -8,7 +8,14 @@ class TooltipTest extends StatelessWidget{
   // 具体原因还未深究
   @override
   Widget build(BuildContext context){
+
+
+    // Scaffold不能直接使用
+
+
+    var _scaffoldkey = new GlobalKey<ScaffoldState>();
     return Scaffold( //
+        key: _scaffoldkey,
         appBar: AppBar(
           title: Text('app bar tooltip'),
         ),
@@ -46,10 +53,49 @@ class TooltipTest extends StatelessWidget{
               Tooltip(
                 message: 'toast',
                 child: RaisedButton(
-                  child: Text('toast show'),
+                  child: Text('toast show and snackBar'),
                   onPressed: (){
                     Fluttertoast.showToast(msg: 'this is a toast');
 
+                    _scaffoldkey.currentState.showSnackBar(
+                      SnackBar(
+                        content: Text('这是snack bar'),
+                        action: SnackBarAction(
+                          label: 'snackbar scaffold key',
+                          onPressed: (){
+                            print('pressed snackbar');
+                          },
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              Center(
+
+                child: Builder(
+                  builder: (context){
+                    return GestureDetector(
+                      child: Text('snackbar gesture',),
+                      onTap: (){
+                        final snackBar = SnackBar(
+                          content: Text('这是snackbar gesture，3秒后自动关闭'),
+                          backgroundColor: Colors.redAccent,
+                          duration: Duration(seconds: 3),
+                          action: SnackBarAction(
+                            label: '撤消',
+                            textColor: Colors.white,
+                            // 这里点了之后，会直接关闭这个snackBar，不管有没有执行事件
+                            onPressed: (){
+                              print('close snackbar');
+                            },
+                          ),
+                        );
+
+                        Scaffold.of(context).showSnackBar(snackBar);
+                      },
+
+                    );
                   },
                 ),
               ),
