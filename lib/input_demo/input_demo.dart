@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+// 官网说明
+// https://flutterchina.club/text-input/
+//
 class InputDemo extends StatefulWidget{
   @override
   _InputDemoState createState() => _InputDemoState();
@@ -18,9 +21,11 @@ class _InputDemoState extends State<InputDemo>{
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Container(
-              padding: EdgeInsets.all(30),
+              padding: EdgeInsets.all(10),
               // maxLength 长度设置后，右下角会有数字显示,无法输入超过的字符
               // 但onChanged 事件依然可触发
+              child: SingleChildScrollView(
+
               child: Column(
                 // 水平方向，默认是居中，这里设置为左对齐
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,6 +43,7 @@ class _InputDemoState extends State<InputDemo>{
                   Divider(),
                   Text('复杂一点的'),
                   TextField(
+                    //obscureText: true, // 密码显示
                     keyboardType: TextInputType.number,
                     onChanged: (input) => print('onchange: $input'),
                     decoration: InputDecoration(
@@ -46,12 +52,15 @@ class _InputDemoState extends State<InputDemo>{
                       icon:Icon(Icons.directions_bike),
                       labelText: '请输入你的姓名',
                       helperText: '请输入你的真实姓名',
+                      hintText: 'hint text', // 为空时显示的灰色背景
+
                     ),
                     // 自动弹出输入键盘
                     autofocus: true,
                   ),
 
                 ]
+              ),
               ),
             ),
           ],

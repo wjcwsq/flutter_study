@@ -74,7 +74,7 @@ class _DialogDemoState extends State<DialogDemo>{
   }
 
   Future showSimpleDialog(){
-    showDialog(
+    return showDialog(
       context: context,
       barrierDismissible: false,
       builder: (context){

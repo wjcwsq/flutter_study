@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 
-/**
- * 圆形进度条
- * 可以在外面包一层SizedBox，间接改变进度条的大小
- *const CircularProgressIndicator({
-    Key key,
-    double value,//0~1的浮点数，用来表示进度多少;如果 value 为 null 或空，则显示一个动画，否则显示一个定值
-    Color backgroundColor,//背景颜色
-    Animation<Color> valueColor,//animation类型的参数，用来设定进度值的颜色，默认为主题色
-    this.strokeWidth = 4.0,//进度条宽度
-    String semanticsLabel,
-    String semanticsValue,
-    })
-
-原文：https://blog.csdn.net/weixin_34038652/article/details/88179780
-
-*/
+///**
+// * 圆形进度条
+// * 可以在外面包一层SizedBox，间接改变进度条的大小
+// *const CircularProgressIndicator({
+//    Key key,
+//    double value,//0~1的浮点数，用来表示进度多少;如果 value 为 null 或空，则显示一个动画，否则显示一个定值
+//    Color backgroundColor,//背景颜色
+//    Animation<Color> valueColor,//animation类型的参数，用来设定进度值的颜色，默认为主题色
+//    this.strokeWidth = 4.0,//进度条宽度
+//    String semanticsLabel,
+//    String semanticsValue,
+//    })
+//
+//原文：https://blog.csdn.net/weixin_34038652/article/details/88179780
+//
+//*/
 class ProgressBarDemo extends StatefulWidget {
   @override
   _ProgressBarDemoState createState() => _ProgressBarDemoState();

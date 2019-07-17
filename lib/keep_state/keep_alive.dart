@@ -18,10 +18,10 @@ class KeepAliveApp extends StatelessWidget {
 
 class _KeepAliveDemo extends StatefulWidget {
   @override
-  _keepAliveDemoState createState() => _keepAliveDemoState();
+  _KeepAliveDemoState createState() => _KeepAliveDemoState();
 }
 
-class _keepAliveDemoState extends State<_KeepAliveDemo>
+class _KeepAliveDemoState extends State<_KeepAliveDemo>
     with SingleTickerProviderStateMixin { // 1. with 继承
   TabController _tabController; // 2. 定义controller
 
