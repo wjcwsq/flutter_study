@@ -6,6 +6,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'search_bar/search_bar_demo.dart';
 import 'progress_bar/progress_bar_demo.dart';
 import 'dialog_demo/dialog_demo.dart';
+import 'input_demo/input_demo.dart';
 
 void main() => runApp(MyApp());
 
@@ -107,10 +108,15 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Container( // 用Container来包一个ToolTip
               child: Tooltip(
-                message: 'container tooltip raisedbutton',
+                message: 'tooltip input show',
                 child: RaisedButton(
-                  child: Text('container - tooltip - raisedbutton'),
-                  onPressed: ()=> print('container - tooltip - raisedbutton - pressed'),
+                  child: Text('input test'),
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(
+                      builder:(context) => InputDemo(),
+                    ));
+
+                  },
                 ),
               ),
             ),

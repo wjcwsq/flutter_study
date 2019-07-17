@@ -32,6 +32,16 @@ class TooltipTest extends StatelessWidget{
             children: <Widget>[
               Text('tooltip test demo', style: TextStyle(color: Colors.red, fontWeight: FontWeight.w500,),),
               Divider(),
+              Container(
+                child: Tooltip(
+                  message: "Container包一个Tooltip",
+                  child: RaisedButton(
+                    child: Text('Container tooltip'),
+                    onPressed: ()=> Fluttertoast.showToast(msg: 'this is a container tool tip'),
+                  ),
+                ),
+              ),
+              Divider(),
               Tooltip(
                 message: 'buttn tooltip 下面显示',
                 child: RaisedButton(
