@@ -3,6 +3,7 @@ import 'package:flutter_study/grid_demo/grid_view_demo.dart';
 import 'package:flutter_study/keep_state/keep_alive.dart';
 import 'package:flutter_study/navigator_demo/navigator_demo.dart';
 import 'package:flutter_study/scroll_demo/scroll_view_demo.dart';
+import 'package:flutter_study/test/test_demo.dart';
 import 'package:flutter_study/tooltip/tooltip.dart';
 import 'package:flutter_study/bottom_navi/bottom_navigation.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -180,9 +181,17 @@ class _MyHomePageState extends State<MyHomePage> {
                         ));
                       },
                     ),
+                    SizedBox(width: 10,),
+                    RaisedButton(
+                      child: Text('test demo'),
+                      onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context) => TestDemo(),
+                        ));
+                      },
+                    ),
                   ],
-                ),
-              ),
+                  ),),
               // RaisedButton内部是没办法用ToolTip的
               RaisedButton(
                 textColor: Colors.blue,
@@ -265,7 +274,9 @@ class _MyHomePageState extends State<MyHomePage> {
               Divider(),
               RaisedButton(
                 child: Text('test'),
-                onPressed: () {},
+                onPressed: () {
+
+                },
               ),
               Divider(),
               Container(

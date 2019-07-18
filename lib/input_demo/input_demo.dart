@@ -10,6 +10,8 @@ class InputDemo extends StatefulWidget{
 
 class _InputDemoState extends State<InputDemo>{
 
+  bool _obscure = true;
+
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -57,6 +59,35 @@ class _InputDemoState extends State<InputDemo>{
                     ),
                     // 自动弹出输入键盘
                     autofocus: true,
+                  ),
+                  Divider(),
+                  // 点击 显示，隐藏密码
+                  TextField(
+                    obscureText: _obscure,
+                    autofocus: true,
+                    maxLength: 20,
+                    decoration: InputDecoration(
+                      labelText: '请输入密码',
+                      hintText: 'your password',
+                      helperText: '?您之前设置的密码，若无，则不用填',
+                      icon: Icon(Icons.lock, color: Colors.red,),
+                      suffixIcon: IconButton(
+                        icon: Icon(
+                          Icons.remove_red_eye,
+                          color: _obscure ? Colors.grey : Colors.red,
+                        ),
+                        onPressed: (){
+                          setState(() {
+                            _obscure = !_obscure;
+                          });
+                        },
+                      ),
+
+
+                    ),
+                    onChanged: (input){
+                      print('onChanged: $input');
+                    },
                   ),
 
                 ]
