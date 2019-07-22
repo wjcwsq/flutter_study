@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_study/bloc/bloc_demo.dart';
 import 'package:flutter_study/grid_demo/grid_view_demo.dart';
 import 'package:flutter_study/keep_state/keep_alive.dart';
 import 'package:flutter_study/navigator_demo/navigator_demo.dart';
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
+
     );
   }
 }
@@ -286,6 +288,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 50, // 高度不设，则不显示
                 //width: 100, // 宽度不设，则水平占满
               ),
+              RaisedButton(
+                child: Text('bloc'),
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context)=> BlocDemo(),
+                  ));
+                },
+              )
             ],
           ),
         ),

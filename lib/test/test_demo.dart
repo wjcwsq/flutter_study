@@ -19,12 +19,20 @@ class TestDemoState extends State<TestDemo>{
       ),
       body: Align(
         alignment: Alignment.bottomRight,
-        widthFactor: 3,
-        heightFactor: 3,
+        //widthFactor: 3,
+        //heightFactor: 3,
         child: Container(
-          width: 100,
-          height: 50,
+          width: 200,
+          height: 100,
           color: Colors.red,
+          child: Padding(
+            padding: EdgeInsets.all(5),
+            child: Container(
+              //width: 50, height: 50,
+              color: Colors.blue,
+              child: Text('hello'),
+            ),
+          ),
         ),
       ),
     );
