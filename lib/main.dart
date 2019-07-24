@@ -10,6 +10,7 @@ import 'package:flutter_study/bottom_navi/bottom_navigation.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'movid_demo/movie_demo.dart';
 import 'progress_bar/indicator_demo.dart';
+import 'progress_bar/indicator_demo2.dart';
 import 'search_bar/search_bar_demo.dart';
 import 'progress_bar/progress_bar_demo.dart';
 import 'dialog_demo/dialog_demo.dart';
@@ -21,6 +22,8 @@ Map<String, WidgetBuilder> _routes = <String, WidgetBuilder>{
   //Navigator.defaultRouteName: (context) => MyHomePage(title: 'demo page',),
   //Navigator.defaultRouteName: (context) => IndicatorDemo(),
   Navigator.defaultRouteName: (context) => MovieDemo(),
+  //Navigator.defaultRouteName: (context) => IndicatorDemo2(),
+
 };
 
 class MyApp extends StatelessWidget {
